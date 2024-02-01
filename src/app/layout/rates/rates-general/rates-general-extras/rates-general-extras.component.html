@@ -1,0 +1,17 @@
+<div class="row list-entry mb-1 mt-3">
+    <div class="col-lg-12">
+      <div class="table-responsive">
+        <app-editable-grid [addEmitter]="newRowEmitter" [newRowPrototype]="newExtraRowPrototype" [columnDefs]="columnDefs" [rowData]="rowData" [decorator]="extraDecorator"></app-editable-grid>
+      </div>
+    </div>
+</div>
+<div class="d-flex">
+  <button class="btn btn-primary btn-default mt-2" (click)="insertExtra()">Insert Extra</button>
+</div>
+<div class="row list-entry mb-1 mt-3">
+    <div class="col-lg-12">
+      <div class="table-responsive">
+        <app-editable-grid [addEmitter]="newExtraCheckEmitter" [newRowPrototype]="newExtraCheckPrototype" [columnDefs]="checkColumnDefs" [rowData]="rowCheckData" [decorator]="extraCheckDecorator"></app-editable-grid>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{
+  "totalCount": 8,
+  "currentPage": 1,
+  "pageSize": 10,
+  "items": [
+    {
+      "uid": "12345",
+      "date": "01/09/2023",
+      "exchange_rate": "0.000001",
+      "code": "SEK",
+      "description": "Swedish Krona"
+    },
+    {
+      "uid": "123456",
+      "date": "03/09/2023",
+      "exchange_rate": "0.000003",
+      "code": "SEK",
+      "description": "Description"
+    }
+  ]
+}

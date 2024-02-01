@@ -1,0 +1,115 @@
+<h4>Season Details</h4>
+<form class="needs-validation pt-3" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+    <div class="row">
+        <div class="form-group col-lg-7 col-md-7 col-sm-7 col-12">
+            <div class="d-flex flex-column">
+                <div class="form-group">
+                    <label for="name" class="required">Description</label>
+                    <input class="form-control" type="text" formControlName="description" id="description" placeholder="Enter description here"
+                    [ngClass]="{ 'is-invalid': submitted && fields.description.errors, 'is-valid': submitted && !fields.description.errors }"/>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex" style="column-gap: 8px;">
+                        <div class="d-flex flex-column">
+                            <label>Season Start</label>
+                            <div class="d-flex form-group">
+                                <input class="form-control mr-2" type="date">
+                                <input class="form-control" type="text" value="12:00AM"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label>Season End</label>
+                            <div class="d-flex form-group">
+                                <input class="form-control mr-2" type="date">
+                                <input class="form-control" type="text" value="11:59PM"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex" style="column-gap: 8px;">
+                        <div class="d-flex flex-column">
+                            <label>Reservation From</label>
+                            <div class="d-flex form-group">
+                                <input class="form-control mr-2" type="date">
+                                <input class="form-control" type="text" value="12:00AM"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label>Reservation To</label>
+                            <div class="d-flex form-group">
+                                <input class="form-control mr-2" type="date">
+                                <input class="form-control" type="text" value="11:59PM"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Minimum nr. of days</label>
+                    <input class="form-control" type="text" id="minimum_days" placeholder="" />
+                </div>
+                <div class="form-group">
+                    <label>Maximum nr. of days</label>
+                    <input class="form-control" type="text" id="maximum_days" placeholder="" />
+                </div>
+                <div class="d-flex">
+                    <div class="d-flex flex-column advanced-booking-part">
+                        <label>Advanced booking</label>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center">
+                                <span class="advanced-booking-label">Discount(%)</span>
+                                <input class="form-control ml-2" />
+                            </div>
+                            <div class="d-flex align-items-center mt-3">
+                                <span class="advanced-booking-label">Nr. of days</span>
+                                <input class="form-control ml-2" />
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="d-flex flex-column days-including-part ml-4">
+                        <label>Days including</label>
+                        <input class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-lg-5 col-md-5 col-sm-5 col-12">
+            <div class="d-flex flex-column">
+                <div class="form-group">
+                    <label>Grace Period (minutes)</label>
+                    <input class="form-control" type="text" id="grace_period" placeholder="" />
+                </div>
+                <div class="form-group">
+                    <label>Maximum Discount (%)</label>
+                    <input class="form-control" type="text" id="maximum_discount" placeholder="" />
+                </div>
+                <div class="form-group">
+                    <label>Maximum Commission (%)</label>
+                    <input class="form-control" type="text" id="maximum_commission" placeholder="" />
+                </div>
+                <div class="form-group">
+                    <label>Increase or decrease value in %</label>
+                    <select class="form-control">
+                        <option>0.00</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-column">
+                    <label>Values based in</label>
+                    <mat-radio-group class="values-group ml-4">
+                        <mat-radio-button>Zero value for days and Kms</mat-radio-button>
+                        <mat-radio-button>On an existing rate</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="d-flex mt-4">
+                    <mat-checkbox>Don't change oneway after</mat-checkbox>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-10 col-md-10 col-sm-10 col-12">
+          <div class="d-flex justify-content-center" style="column-gap: 20px;">
+            <button class="btn btn-outline-dark">Submit</button>
+            <button class="btn btn-outline-dark">Cancel</button>
+          </div>
+        </div>
+    </div>
+</form>

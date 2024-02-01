@@ -1,0 +1,169 @@
+<h4 class="mt-3 mb-3">Country Details</h4>
+<form class="needs-validation" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Code</label>
+          <input class="form-control" type="text" formControlName="code" id="code" placeholder="Enter Code here" maxlength="200"
+                 [ngClass]="{ 'is-invalid': submitted && fields.code.errors, 'is-valid': submitted && !fields.code.errors }"/>
+          <div *ngIf="submitted && fields.code.errors"
+               class="invalid-feedback d-block">
+            <div *ngIf="fields.code.errors.required">code is required.</div>
+            <div *ngIf="fields.code.errors.maxlength">code must be less 200 characters</div>
+          </div>
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">ISO</label>
+          <input class="form-control" type="text" formControlName="iso" id="iso" placeholder="AF" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-md-7 form-group" style="margin-top: 8px;">
+          <label></label>
+          <input class="form-control" type="date" />
+        </div>
+        <div class="col-md-5" style="margin-top: 32px;">
+          <button class="btn btn-primary btn-default">Export Excel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Description</label>
+          <input class="form-control" type="text" formControlName="description" id="description" placeholder="Write description here" />
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Numeric ISO</label>
+          <input class="form-control" type="text" formControlName="numeric_iso" id="numeric_iso" placeholder="" />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-md-9 form-group">
+          <label>Allowed Countries</label>
+          <input class="form-control" type="date" />
+        </div>
+        <div class="col-md-3" style="margin-top: 32px;">
+          <button class="btn btn-primary btn-default">Add</button>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Phone Country Code</label>
+          <input class="form-control" type="text" formControlName="phone_country_code" id="phone_country_code" placeholder="93" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Code</label>
+          <input class="form-control" type="text" placeholder="Enter Code here" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Description</label>
+          <input class="form-control" type="text" placeholder="Write description here" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Phone Country code</label>
+          <input class="form-control" type="text" placeholder="93" />
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-md-5">
+      <div class="table-responsive">
+        <table class="table">
+            <thead class="bg-light h6">
+                <tr>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ADA</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+  <div class="row" style="border-bottom: 1px solid #6B6262;">
+    <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+      <label>Category</label>
+      <select class="form-control">
+        <option>CCAD</option>
+      </select>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-7">
+      <div class="row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Model Name</label>
+          <input class="form-control" type="text" placeholder="" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Guaranteed Model</label>
+          <input class="form-control" type="text" placeholder="" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Guaranteed year</label>
+          <input class="form-control" type="text" placeholder="" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Mileage Application</label>
+          <input class="form-control" type="text" placeholder="" />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+          <label for="name" class="required">Fuel Policy</label>
+          <input class="form-control" type="text" placeholder="" />
+        </div>
+      </div>      
+    </div>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Doors</label>
+          <input class="form-control" type="text" placeholder="0" />
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Passengers</label>
+          <input class="form-control" type="text" placeholder="0" />
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Min Driver Age</label>
+          <input class="form-control" type="text" placeholder="0" />
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Max Driver Age</label>
+          <input class="form-control" type="text" placeholder="0" />
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Four wd</label>
+          <input class="form-control" type="text" placeholder="0" />
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+          <label for="name" class="required">Deoosit</label>
+          <input class="form-control" type="text" placeholder="0" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-lg-8 col-md-8 col-sm-12 col-12">
+      <div class="d-flex justify-content-center" style="column-gap: 20px;">
+        <button class="btn btn-primary btn-default">Submit</button>
+        <button class="btn btn-outline-dark btn-default">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

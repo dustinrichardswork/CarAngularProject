@@ -1,0 +1,81 @@
+<mat-tab-group [color]="'primary'">
+  <mat-tab label="Currency Details">
+    <form *ngIf="currentModel" class="needs-validation pt-3 d-flex h-100 flex-column justify-content-between" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+      <div class="d-flex flex-column">
+        <div class="row">
+          <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+            <label for="name"
+                  class="required">Code</label>
+            <input class="form-control"
+                  type="text"
+                  formControlName="code"
+                  id="code"
+                  placeholder="Enter Code here"
+                  [ngClass]="{ 'is-invalid': submitted && fields.code.errors, 'is-valid': submitted && !fields.code.errors }"/>
+            <div *ngIf="submitted && fields.code.errors"
+                class="invalid-feedback">
+              <div *ngIf="fields.code.errors.required">code is required.</div>
+            </div>
+          </div>
+          <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+            <label for="name"
+                  class="required">Exchange Rate</label>
+            <input class="form-control"
+                  type="text"
+                  formControlName="exchange_rate"
+                  id="exchange_rate"
+                  placeholder="Enter Exchange Rate here"
+                  [ngClass]="{ 'is-invalid': submitted && fields.exchange_rate.errors, 'is-valid': submitted && !fields.exchange_rate.errors }"/>
+            <div *ngIf="submitted && fields.exchange_rate.errors"
+                class="invalid-feedback">
+              <div *ngIf="fields.exchange_rate.errors.required">exchange_rate is required.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+            <label for="name"
+                  class="required">Description</label>
+            <input class="form-control"
+                  type="text"
+                  formControlName="description"
+                  id="description"
+                  placeholder="Write description here"
+                  [ngClass]="{ 'is-invalid': submitted && fields.description.errors, 'is-valid': submitted && !fields.description.errors }"/>
+          </div>
+          <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+            <label for="name"
+                  class="required">Unit</label>
+            <input class="form-control"
+                  type="text"
+                  formControlName="unit"
+                  id="unit"
+                  placeholder="Enter Unit here"
+                  [ngClass]="{ 'is-invalid': submitted && fields.unit.errors, 'is-valid': submitted && !fields.unit.errors }"/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+            <label for="name"
+                  class="required">Decimal</label>
+            <input class="form-control"
+                  type="text"
+                  formControlName="decimal"
+                  id="decimal"
+                  placeholder="Write Decimal here"
+                  [ngClass]="{ 'is-invalid': submitted && fields.decimal.errors, 'is-valid': submitted && !fields.decimal.errors }"/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="d-flex justify-content-center gap-x-20">
+        <button class="btn btn-primary btn-default">History</button>
+        <button class="btn btn-primary btn-default">Submit</button>
+        <button class="btn btn-outline-dark btn-default">Cancel</button>
+      </div>
+    </form>
+  </mat-tab>
+  <mat-tab label="History">
+    <app-currency-history-list [history]="history" [pageWrapper]="pageWrapper"></app-currency-history-list>
+  </mat-tab>
+</mat-tab-group>

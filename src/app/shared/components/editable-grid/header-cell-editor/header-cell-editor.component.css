@@ -1,0 +1,6 @@
+:host{
+    width: 100%;
+    .ag-input-field-input {
+        padding-left: 6px !important;
+    }
+}

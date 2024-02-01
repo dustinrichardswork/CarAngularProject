@@ -1,0 +1,143 @@
+{
+  "totalCount": 25,
+  "currentPage": 0,
+  "pageSize": 10,
+  "items": [
+    {
+      "rateCode": "GR ATH BROKER",
+      "kmsPerDay": null,
+      "typeKmsIncluded": "D",
+      "kmPrice": null,
+      "checkOutFrom": "20221122",
+      "checkOutTo": "20221123",
+      "reservationFrom": "20221122",
+      "reservationTo": "20221122",
+      "vehicleCategoryCode": "CDMR",
+      "type": "D",
+      "rentalPeriods": [
+        {
+          "minDays": 1,
+          "maxDays": 2,
+          "daysGL": 1,
+          "price": 0
+        },
+        {
+          "minDays": 3,
+          "maxDays": 3,
+          "daysGL": 3,
+          "price": 0
+        },
+        {
+          "minDays": 4,
+          "maxDays": 5,
+          "daysGL": 5,
+          "price": 0
+        },
+        {
+          "minDays": 6,
+          "maxDays": 7,
+          "daysGL": 7,
+          "price": 0
+        },
+        {
+          "minDays": 8,
+          "maxDays": 10,
+          "daysGL": 10,
+          "price": 0
+        },
+        {
+          "minDays": 11,
+          "maxDays": 14,
+          "daysGL": 15,
+          "price": 0
+        },
+        {
+          "minDays": 15,
+          "maxDays": 21,
+          "daysGL": 21,
+          "price": 0
+        },
+        {
+          "minDays": 22,
+          "maxDays": 31,
+          "daysGL": 31,
+          "price": 0
+        },
+        {
+          "minDays": 32,
+          "maxDays": 99,
+          "daysGL": 99,
+          "price": 0
+        }
+      ]
+    },
+    {
+      "rateCode": "GR ATH BROKER",
+      "kmsPerDay": null,
+      "typeKmsIncluded": "D",
+      "kmPrice": null,
+      "checkOutFrom": "20221122",
+      "checkOutTo": "20221123",
+      "reservationFrom": "20221122",
+      "reservationTo": "20221122",
+      "vehicleCategoryCode": "EDMR",
+      "type": "D",
+      "rentalPeriods": [
+        {
+          "minDays": 1,
+          "maxDays": 2,
+          "daysGL": 1,
+          "price": 0
+        },
+        {
+          "minDays": 3,
+          "maxDays": 3,
+          "daysGL": 3,
+          "price": 0
+        },
+        {
+          "minDays": 4,
+          "maxDays": 5,
+          "daysGL": 5,
+          "price": 0
+        },
+        {
+          "minDays": 6,
+          "maxDays": 7,
+          "daysGL": 7,
+          "price": 0
+        },
+        {
+          "minDays": 8,
+          "maxDays": 10,
+          "daysGL": 10,
+          "price": 0
+        },
+        {
+          "minDays": 11,
+          "maxDays": 14,
+          "daysGL": 15,
+          "price": 0
+        },
+        {
+          "minDays": 15,
+          "maxDays": 21,
+          "daysGL": 21,
+          "price": 0
+        },
+        {
+          "minDays": 22,
+          "maxDays": 31,
+          "daysGL": 31,
+          "price": 0
+        },
+        {
+          "minDays": 32,
+          "maxDays": 99,
+          "daysGL": 99,
+          "price": 0
+        }
+      ]
+    }
+  ]
+}

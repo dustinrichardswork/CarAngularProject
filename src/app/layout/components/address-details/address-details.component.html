@@ -1,0 +1,80 @@
+<!-- UI for AddressDetailsComponent
+
+ Initially powered by Stantum Angular Utils.
+ Want to dramatically increase your development speed too? Visit https://www.stantum.cz/development-automation -->
+
+<div>
+  <form *ngIf="formGroup"
+        class="needs-validation"
+        novalidate
+        [formGroup]="formGroup">
+    <div class="row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+        <label for="addressLine1"
+               class="required">Address line 1</label>
+        <input class="form-control"
+               type="text"
+               formControlName="addressLine1"
+               id="addressLine1"
+               placeholder="Address"
+               maxlength="500"
+               [ngClass]="{
+              'is-invalid': submitted && fields.addressLine1.errors,
+              'is-valid': submitted && !fields.addressLine1.errors
+            }">
+        <div *ngIf="submitted && fields.addressLine1.errors"
+             class="invalid-feedback">
+          <div *ngIf="fields.addressLine1.errors.required">Address line 1 is required.</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+        <label for="addressLine2">Address line 2</label>
+        <input class="form-control"
+               type="text"
+               formControlName="addressLine2"
+               placeholder="Address"
+               maxlength="500">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+        <label for="city">City</label>
+        <input class="form-control"
+               type="text"
+               formControlName="city"
+               id="city"
+               placeholder="City"
+               maxlength="100"
+               [ngClass]="{ 'is-invalid': submitted && fields.city.errors, 'is-valid': submitted && !fields.city.errors }">
+        <div *ngIf="submitted && fields.city.errors"
+             class="invalid-feedback">
+          <div *ngIf="fields.city.errors.required">City is required.</div>
+        </div>
+      </div>
+      <div class="form-group col-lg-3 col-md-6 col-sm-6 col-12">
+        <label for="zipCode">Zip code</label>
+        <input class="form-control"
+               type="text"
+               formControlName="zipCode"
+               placeholder="Zip code"
+               maxlength="10"
+               [ngClass]="{ 'is-invalid': submitted && fields.zipCode.errors, 'is-valid': submitted && !fields.zipCode.errors }">
+        <div *ngIf="submitted && fields.zipCode.errors"
+             class="invalid-feedback">
+          <div *ngIf="fields.zipCode.errors.required">Zip code is required.</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+        <label for="countryName">Country</label>
+        <input class="form-control"
+               type="text"
+               id="countryName"
+               formControlName="countryName"/>
+      </div>
+    </div>
+  </form>
+</div>

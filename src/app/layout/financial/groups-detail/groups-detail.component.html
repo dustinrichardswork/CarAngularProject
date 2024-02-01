@@ -1,0 +1,140 @@
+<mat-tab-group [color]="'primary'">
+    <mat-tab label="Group Details">
+        <form *ngIf="currentModel" class="needs-validation pt-3" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+            <div class="row">
+                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="d-flex flex-column pl-2">
+                        <div class="form-group">
+                            <label>Code</label>
+                            <input class="form-control" type="text" placeholder="Enter Code here">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input class="form-control" type="text" placeholder="Write description here">
+                        </div>
+                        <div class="d-flex gap-x-20">
+                            <div class="left-side">
+                                <div class="d-flex flex-column ">
+                                    <div class="form-group">
+                                        <label>Excess without CDW</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Partial CDW excess</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Excess without theft Insurance</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Minimum Age</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Maximum Age</label>
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="d-flex flex-column">
+                                    <div class="form-group">
+                                        <label>Excess with CDW</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Excess with SCDW</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Excess theft</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Super theft excess</label>
+                                        <input class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Minimum License Time</label>
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="d-flex flex-column pr-2">
+                        <div class="d-flex gap-x-20">
+                            <div class="form-group w-50">
+                                <label>SIPP</label>
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Sorting Order</label>
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="d-flex gap-x-20">
+                            <div class="d-flex flex-column w-50">
+                                <div class="form-group">
+                                    <label>Reference Segment</label>
+                                    <select class="form-control">
+                                        <option>Luxury</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Reference brand</label>
+                                    <select class="form-control">
+                                        <option>Mercedez Benz</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column w-50 justify-content-center">
+                                <mat-checkbox>Special Group</mat-checkbox>
+                                <mat-checkbox>Group available for internet</mat-checkbox>
+                                <mat-checkbox>Disabled</mat-checkbox>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-x-20">
+                            <div class="form-group w-50">
+                                <label>Reference model</label>
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Image URL</label>
+                                <input class="form-control" type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="d-flex gap-x-20">
+                            <div class="form-group w-50">
+                                <label>Reference version</label>
+                                <select class="form-control">
+                                    <option>BG</option>
+                                </select>
+                            </div>
+                            <div class="form-group w-50">
+                                <label>Croquis</label>
+                                <select class="form-control">
+                                    <option>DEFAULT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Details</label>
+                            <textarea class="form-control" rows="4" placeholder="Minimum 5 days rental. Available for booking only with 2 credit cars"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center gap-x-20">
+                <button class="btn btn-primary btn-default">Submit</button>
+                <button class="btn btn-outline-dark btn-default">Cancel</button>
+            </div>
+        </form>
+    </mat-tab>
+    <mat-tab label="Upgrades/Downgrades Authorized">
+
+    </mat-tab>
+</mat-tab-group>

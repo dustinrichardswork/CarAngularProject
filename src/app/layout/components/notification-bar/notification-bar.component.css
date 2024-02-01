@@ -1,0 +1,10 @@
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alert {
+    cursor: pointer;
+    opacity: 0;
+}

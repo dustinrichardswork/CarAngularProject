@@ -1,0 +1,14 @@
+<form class="needs-validation pt-3 d-flex flex-column" novalidate [formGroup]="formGroup">
+    <div class="d-flex flex-column mt-2">
+        <div class="table-responsive">
+            <app-editable-grid [addEmitter]="newPromoEmitter" [newRowPrototype]="newPromoRowPrototype" [columnDefs]="columnDefs" [rowData]="rowData" [decorator]="promoDecorator"></app-editable-grid>
+            <button class="btn btn-primary btn-default mt-1" (click)="insertNewPromo()">Insert Promo</button>
+        </div>
+    </div>
+    <div class="w-100 justify-content-center">
+        <div class="d-flex justify-content-center" style="column-gap: 40px;">
+            <button class="btn btn-primary btn-default">Submit</button>
+            <button class="btn btn-outline-dark">Cancel</button>
+        </div>
+    </div>
+</form>

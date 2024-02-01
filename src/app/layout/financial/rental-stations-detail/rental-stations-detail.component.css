@@ -1,0 +1,10 @@
+::ng-deep .mat-tab-body-content {
+    overflow: visible !important;
+}
+::ng-deep .mat-tab-label {
+    font-weight: bold;
+    color: black;
+}
+.gap-x-20 {
+    column-gap: 20px;
+}

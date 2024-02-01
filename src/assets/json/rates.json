@@ -1,0 +1,22 @@
+{
+  "totalCount": 8,
+  "currentPage": 1,
+  "pageSize": 10,
+  "items": [
+    {
+      "uid": "12345",
+      "code": "AL BROKER RATE",
+      "description": "Rates for Tirana Airport"
+    },
+    {
+      "uid": "12346",
+      "code": "DL BROKER RATE",
+      "description": "Rates for Chicago Airport"
+    },
+    {
+      "uid": "12347",
+      "code": "ML BROKER RATE",
+      "description": "Rates for NewYork Airport"
+    }
+  ]
+}

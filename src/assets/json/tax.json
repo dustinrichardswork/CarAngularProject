@@ -1,0 +1,12 @@
+{
+  "totalCount": 8,
+  "currentPage": 1,
+  "pageSize": 10,
+  "items": [
+    {
+      "uid": "12345",
+      "code": "20",
+      "description": "VAT 34%"
+    }
+  ]
+}

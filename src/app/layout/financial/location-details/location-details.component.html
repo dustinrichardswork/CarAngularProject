@@ -1,0 +1,142 @@
+<h4>Edit Location</h4>
+<div>
+  <form class="needs-validation" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+        <label for="countryName">Country</label>
+        <select class="form-control" type="text" formControlName="countryName" maxlength="50"
+          [(ngModel)]="location.country">
+          <option value="">Select Country</option>
+          <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+        </select>
+
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="locationType">State/Province</label>
+        <select class="form-control" type="text" formControlName="locationType" maxlength="50">
+          <option value="">Select state or province.</option>
+          <option *ngFor="let state of states" value="state">{{state}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+        <label for="locationName">Location Name</label>
+        <!-- <div class="form-check form-check-inline float-right">
+          <input class="form-check-input" type="checkbox" formControlName="isShownOnSite" id="isShownOnSite">
+          <label class="form-check-label" for="isShownOnSite">Show on site</label>
+        </div> -->
+
+        <input class="form-control" type="text" formControlName="locationName" maxlength="50" />
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="locationType">Location Type</label>
+        <select class="form-control" type="text" formControlName="rate" maxlength="4"
+          [ngClass]="{ 'is-invalid': submitted && fields.rate.errors, 'is-valid': submitted && !fields.rate.errors }">
+          <option value="">Select Location Type</option>
+          <option *ngFor="let state of states" value="state">{{state}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+        <label for="locationName">Email</label>
+        <input class="form-control" type="text" formControlName="locationName" maxlength="50" />
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12 d-flex flex-column justify-content-between">
+        <div class="form-check form-check-inline float-right">
+          <input class="form-check-input" type="checkbox" formControlName="email" id="email">
+          <label class="form-check-label" for="email">Enable after hours</label>
+        </div>
+        <div class="form-check form-check-inline float-right">
+          <input class="form-check-input" type="checkbox" formControlName="timezone" id="timezone">
+          <label class="form-check-label" for="timezone">Specific Timezone</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-12 col-12">
+        <label for="address">Address</label>
+        <input class="form-control" type="text" formControlName="address" maxlength="500" [(ngModel)]="location.name" />
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="longitude">Longitude</label>
+        <input class="form-control" type="text" formControlName="longitude" maxlength="50" />
+
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="latitude">Latitude</label>
+        <input class="form-control" type="text" formControlName="latitude" maxlength="50" />
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+        <label for="city">City</label>
+        <input class="form-control" type="text" formControlName="city" maxlength="50" [(ngModel)]="location.city" />
+
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="mobilePhone">Timezone</label>
+        <input class="form-control" type="text" formControlName="mobilePhone" maxlength="50" />
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+        <label for="phone">Phone</label>
+        <input class="form-control" type="text" formControlName="phone" maxlength="50" [(ngModel)]="location.phone" />
+
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="mobilePhone">Mobile phone</label>
+        <input class="form-control" type="text" formControlName="mobilePhone" length="80" />
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+        <label for="fax">Fax</label>
+        <input class="form-control" type="text" formControlName="fax" maxlength="3"
+          [ngClass]="{ 'is-invalid': submitted && fields.timezone.errors, 'is-valid': submitted && !fields.timezone.errors }" />
+        <div *ngIf="submitted && fields.timezone.errors" class="invalid-feedback">
+          <div *ngIf="fields.timezone.errors.required">Timezone is required.</div>
+          <div *ngIf="fields.timezone.errors.number">Timezone must be a number.</div>
+          <div *ngIf="fields.timezone.errors.min">Timezone min value is -12.</div>
+          <div *ngIf="fields.timezone.errors.max">Timezone max value is 12.</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+
+        <label for="airportCode">Airport code</label>
+        <input class="form-control" type="text" formControlName="airportCode" maxlength="50"
+          [(ngModel)]="location.code" />
+
+      </div>
+      <div class="form-group col-lg-3 col-md-3 col-sm-6 col-12">
+        <label for="rateCode">Rate code</label>
+        <input class="form-control" type="text" formControlName="rateCode" maxlength="50"
+          [ngClass]="{ 'is-invalid': submitted && fields.rateCode.errors, 'is-valid': submitted && !fields.rateCode.errors }" />
+        <div *ngIf="submitted && fields.rateCode.errors" class="invalid-feedback">
+          <div *ngIf="fields.rateCode.required">Rate code is required.</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group ">
+      <label for="info">Info</label>
+      <textarea class="form-control" id="info" name="info" formControlName="info" rows="4" maxlength="50"></textarea>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+      <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      Submit
+    </button>
+
+  </form>
+</div>

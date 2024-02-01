@@ -1,0 +1,9 @@
+button {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.center {
+  position: absolute;
+  left: 40%;
+}

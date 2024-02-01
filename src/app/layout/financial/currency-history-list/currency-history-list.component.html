@@ -1,0 +1,79 @@
+ <div class="list-wrapper pt-2">
+   <!-- <div class="list-info">
+     <div *ngIf="pageWrapper && pageWrapper.totalCount > 0">
+       Total items: {{pageWrapper.totalCount}}&nbsp;Current page: {{pageWrapper.currentPage}}
+       <a href="javascript:" (click)="downloadCsv()">Export as CSV</a>
+     </div>
+   </div> -->
+   <nav *ngIf="pager.pages && pager.pages.length && pager.pages.length > 1"
+        aria-label="Franchises page navigation bottom">
+     <ul class="pagination mt-1">
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage - 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-left"></i>
+         </a>
+       </li>
+       <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+         <a class="page-link" [routerLink]="['/reservations','page', page]" [queryParams]="query">{{page}}</a>
+       </li>
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage + 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-right"></i>
+         </a>
+       </li>
+     </ul>
+   </nav>
+ </div>
+ <div class="mb-1 mt-1">
+  <app-currency-history-list-filter (onFilter)="onFilter()"></app-currency-history-list-filter>
+ </div>
+ <div class="row list-entry mb-1">
+   <div class="col-lg-12">
+     <div class="table-responsive">
+       <table class="table">
+         <thead class="bg-light h6">
+           <tr>
+             <th scope="col">Date</th>
+             <th scope="col">Exchange Rate</th>
+           </tr>
+         </thead>
+         <tbody *ngFor="let item of history">
+           <tr>
+             <td>{{item.date}}</td>
+             <td>{{item.exchange_rate}}</td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div>
+ <div class="list-wrapper">
+   <div class="list-info mt-1">
+     <div *ngIf="!pageWrapper || pageWrapper.totalCount < 1" [ngStyle]="{'height': '135px'}">
+       Empty list
+     </div>
+     <div *ngIf="pageWrapper && pageWrapper.totalCount > 0">
+       Total items: {{pageWrapper.totalCount}}&nbsp;Current page: {{pageWrapper.currentPage}}
+       <a href="javascript:" (click)="downloadCsv()">Export as CSV</a>
+     </div>
+   </div>
+   <nav *ngIf="pager.pages && pager.pages.length && pager.pages.length > 1"
+        aria-label="Franchises page navigation bottom">
+     <ul class="pagination mt-1">
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage - 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-left"></i>
+         </a>
+       </li>
+       <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+         <a class="page-link" [routerLink]="['/reservations','page', page]" [queryParams]="query">{{page}}</a>
+       </li>
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage + 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-right"></i>
+         </a>
+       </li>
+     </ul>
+   </nav>
+ </div>
+ 

@@ -1,0 +1,41 @@
+.day-content {
+    border: 1px dotted #0F172A;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+.day-content .value {
+    width: 34px;
+    height: 39px;
+    border: 1px solid #0F172A;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+}
+.day-content .percentage {
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid #0F172A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left:6px;
+}
+.day-content .date {
+    height: 35px;
+    border: 1px solid #0F172A;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #94A3B8;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.day-content .value.allotment {
+    color: #EEB523;
+}
+.day-content .value.reservation {
+    color: #0365F4;
+}

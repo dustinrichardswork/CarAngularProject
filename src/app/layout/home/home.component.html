@@ -1,0 +1,57 @@
+<div class="home-wrapper">
+  <p class="home-subtitle">Welcome to the Franchise Management System</p>
+  <h1 class="home-title"><b>addCar</b> Franchise module</h1>
+  <!-- Addcar Admin -->
+  <div *ngIf="loggedUserRole == 0">
+    <div class="box_inner">
+      <div class="box"><a routerLink="/financial">Go to Registry</a></div>
+      <div class="box"><a routerLink="/rates">Go to Rates</a></div>
+    </div>
+    <!--<div class="box_inner">
+      <div class="box"><a routerLink="/brokers">Go to Brokers</a></div>
+      <div class="box"><a routerLink="/reports">Go to Reports</a></div>
+    </div>-->
+  </div>
+
+  <!-- Addcar User -->
+  <div *ngIf="loggedUserRole == 2">
+    <div class="box_inner">
+      <div class="box"><a routerLink="/franchisees">Go to Franchisees</a></div>
+      <div class="box"><a routerLink="/franchisees/{{myFranchiseeId}}/subfranchisees">Go to Subfranchisees</a></div>
+    </div>
+    <div class="box_inner">
+      <div class="box"><a routerLink="/reports">Go to Reports</a></div>
+      <div class="box"><a routerLink="/reservations">Go to Reservations</a></div>
+    </div>
+  </div>
+
+  <!-- Franchisee Admin -->
+  <div *ngIf="loggedUserRole == 1">
+    <div class="box_inner">
+      <div class="box"><a routerLink="/users">Go to Users</a></div>
+      <div class="box"><a routerLink="/franchisees/{{myFranchiseeId}}/subfranchisees">Go to Subfranchisees</a></div>
+    </div>
+    <div class="box_inner">
+      <div class="box"><a routerLink="/reports">Go to Reports</a></div>
+      <div class="box"><a routerLink="/reservations">Go to Reservations</a></div>
+    </div>
+  </div>
+
+  <!-- Franchisee User -->
+  <div *ngIf="loggedUserRole == 3">
+    <div *ngIf="isFranchisee" class="box_inner">
+      <div class="box"><a routerLink="/franchisees/{{myFranchiseeId}}">Go to Details</a></div>
+      <div class="box"><a routerLink="/franchisees/{{myFranchiseeId}}/subfranchisees">Go to Subfranchisees</a></div>
+    </div>
+    <div *ngIf="isFranchisee" class="box_inner">
+      <div class="box"><a routerLink="/reservations">Go to Reservations</a></div>
+    </div>
+    <div *ngIf="isSubFranchisee" class="box_inner">
+      <div class="box"><a routerLink="/franchisees/subfranchisee/{{mySubFranchiseeId}}">Go to Details</a></div>
+      <div class="box"><a routerLink="/reservations">Go to Reservations</a></div>
+    </div>
+  </div>
+</div>
+
+
+<!--/franchisees/37596d13-90c9-40f5-9c9c-60f9b25a2834/subfranchisees/d726a4d3-d72e-472c-97c5-3d80a707eabf-->

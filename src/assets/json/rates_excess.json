@@ -1,0 +1,16 @@
+{
+    "totalCount": 8,
+    "currentPage": 1,
+    "pageSize": 10,
+    "items": [
+      {
+        "uid": "123123123",
+        "group": "CDMR",
+        "without_cdw": "1500.00",
+        "with_cdw": "750.00",
+        "with_partial_cdw": "0.00",
+        "excess_with_cdw": "0.00",
+        "excess_with_scdw": "0.00"
+      }
+    ]
+  }

@@ -1,0 +1,23 @@
+::ng-deep .mat-tab-body-content {
+    overflow: visible !important;
+}
+::ng-deep .mat-tab-label {
+    font-weight: bold;
+    color: black;
+}
+::ng-deep .mat-tab-header {
+    width: fit-content;
+}
+.gap-x-20 {
+    column-gap: 20px;
+}
+.left-side {
+    width: 55%;
+}
+.right-side {
+    width: 45%;
+}
+.form-group label {
+    font-size: 14px;
+}
+  

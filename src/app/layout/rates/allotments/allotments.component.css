@@ -1,0 +1,66 @@
+.gap-x-10 {
+    column-gap: 10px;
+}
+.chk-section {
+    height: 75px;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+}
+.color-legend {
+    font-size: 14px;
+    row-gap: 6px;
+    align-items: center;
+    padding-top: 6px;
+    padding-bottom: 16px;
+    border: 1px dotted #0F172A;
+    border-radius: 10px;
+}
+.color-legend-item {
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+}
+.legend-actions {
+    row-gap: 8px;
+    margin-top: 20px;
+}
+.legend-actions > div {
+    border: 1px solid #0F172A;
+    border-radius: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.allotment-action {
+    color: #E7B124;
+}
+.reservations-action {
+    color: #2F66E8;
+}
+.calendar {
+    color: #414141;
+    font-size: 16px;
+    margin-right: 20px;
+}
+.calendar .weekday {
+    width: 14.2857%;
+    border: 1px solid #0F172A;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    border-radius: 2px;
+}
+.calendar .day {
+    width: 14.2857%;
+}
+app-allotment-day-item {
+    width: 100%;
+}
+.width-fit {
+    width: fit-content;
+}
+.select-sm {
+    max-width: 200px;
+}

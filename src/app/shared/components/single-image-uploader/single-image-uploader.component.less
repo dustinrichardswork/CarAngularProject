@@ -1,0 +1,75 @@
+.upload-file-container {
+  align-items: center;
+  border: 2px dashed #1c8adb;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  position: relative;
+  text-align: center;
+  transition: all .7s;
+  width: 450px;
+  height: 150px;
+
+
+  &--highlighted {
+    background-color: #9ecbec;
+    box-shadow: 0 0 20px 5px #9ecbec;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  &:hover {
+    background-color: #9ecbec;
+    color: white;
+    cursor: pointer;
+  }
+
+  ::ng-deep .dz-message {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    border: none !important;
+    background-color: transparent !important;
+  }
+
+  ::ng-deep .dropzone {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  ::ng-deep .dropzone .dz-text {
+    top: 50%;
+  }
+
+}
+
+.files-list {
+  background: #ffffff;
+  border: 1px dashed;
+  border-radius: 12px;
+  color: #1c8adb;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  padding: 5px;
+  width: 80%;
+}
+
+.files-list .delete-file {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.files-list .delete-file img {
+  width: 30px;
+}
+
+p {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0;
+}

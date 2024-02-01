@@ -1,0 +1,8 @@
+<div class="row list-entry mb-1 mt-3">
+    <div class="col-lg-12">
+      <div class="table-responsive">
+        <app-editable-grid [addEmitter]="newExcessEmitter" [newRowPrototype]="newExcessRowPrototype" [columnDefs]="columnDefs" [rowData]="rowData" [decorator]="excessDecorator"></app-editable-grid>
+        <button class="btn btn-primary btn-default mt-2" (click)="insertExcess()">Insert New Excess</button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+::ng-deep .mat-tab-body-content {
+    overflow: visible !important;
+}
+::ng-deep .mat-tab-label {
+    font-weight: bold;
+    color: black;
+}
+::ng-deep .mat-tab-body.mat-tab-body-active {
+    overflow: visible !important;
+}
+.gap-x-20 {
+    column-gap: 20px;
+}
+.w-55 {
+    width: 55%;
+}
+.w-45 {
+    width: 45%;
+}
+.size-normal {
+    width: 180px;
+}

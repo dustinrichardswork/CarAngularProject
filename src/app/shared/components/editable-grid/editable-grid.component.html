@@ -1,0 +1,23 @@
+<ag-grid-angular
+    style="width: 100%;"
+    class="ag-theme-alpine"
+    #gridProperties
+    [frameworkComponents]="frameworkComponents"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+    domLayout="autoHeight"
+    [rowHeight]="32"
+    [editType]="'fullRow'"
+    [headerHeight]="36"
+    [singleClickEdit]="false"
+    (gridReady)="onGridReady($event)"
+    (rowEditingStopped)="onRowEditingStopped($event)"
+    (rowValueChanged)="onRowValueChanged($event)"
+    (cellKeyDown)="onCellKeyDown($event)"
+    (rowSelected)="onRowSelected($event)"
+    (rowClicked)="onRowClicked($event)"
+    (cellClicked)="onCellClicked($event)"
+  ></ag-grid-angular>

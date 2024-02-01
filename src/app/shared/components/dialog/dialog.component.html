@@ -1,0 +1,19 @@
+<div style="margin-bottom:10px; font-weight:600">
+  {{caption}}
+</div>
+<mat-card-header>
+  <mat-card-title [innerHtml]="text"></mat-card-title>
+  <br />
+</mat-card-header>
+<mat-card-actions class="d-flex align-items-center justify-content-around" *ngIf="onebutton">
+  <button class="btn btn-primary" (click)="close(0)">{{button1Text}}</button>
+</mat-card-actions>
+<mat-card-actions class="d-flex align-items-center justify-content-around" *ngIf="twobutton">
+  <button class="btn btn-primary" (click)="close(0)">{{button1Text}}</button>
+  <button class="btn btn-secondary" (click)="close(1)">{{button2Text}}</button>
+</mat-card-actions>
+<mat-card-actions class="d-flex align-items-center justify-content-around" *ngIf="threebutton">
+  <button class="btn btn-secondary" (click)="close(0)">{{button1Text}}</button>
+  <button class="btn btn-primary" (click)="close(1)">{{button2Text}}</button>
+  <button class="btn btn-secondary" (click)="close(3)">{{button3Text}}</button>
+</mat-card-actions>

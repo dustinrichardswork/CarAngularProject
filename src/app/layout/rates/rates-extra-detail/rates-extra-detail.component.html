@@ -1,0 +1,105 @@
+<mat-tab-group [color]="'primary'">
+    <mat-tab label="Extra Details">
+        <form *ngIf="currentModel" class="needs-validation pt-3" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+            <div class="row">
+                <div class="form-group col-lg-5 col-md-5 col-sm-6 col-12">
+                    <div class="d-flex flex-column">
+                        <div class="form-group">
+                          <label for="name" class="required">Code</label>
+                          <input class="form-control" type="text" formControlName="code" id="code" placeholder="Enter Code here"
+                            [ngClass]="{ 'is-invalid': submitted && fields.code.errors, 'is-valid': submitted && !fields.code.errors }"/>
+                            <div *ngIf="submitted && fields.code.errors"
+                                class="invalid-feedback">
+                              <div *ngIf="fields.code.errors.required">code is required.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="required">Description</label>
+                            <input class="form-control" type="text" formControlName="description" id="description" placeholder="Additional Driver"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="required">Tax Rate</label>
+                            <input class="form-control" type="text" id="tax_rate" placeholder="VAT 0%"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="required">Observation</label>
+                            <textarea class="form-control" type="text" id="observation" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-lg-5 col-md-5 col-sm-6 col-12">
+                    <div class="d-flex flex-column">
+                        <div class="form-group w-80">
+                            <label for="name" class="required">Sorting Order</label>
+                            <input class="form-control" type="text" id="sorting_order"/>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <label>Book Keeping Account</label>
+                            <div class="d-flex gap-x-15">
+                                <input class="form-control" type="text" />
+                                <input class="form-control" type="text"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column mt-3">
+                            <label>Cashflow Account</label>
+                            <div class="d-flex gap-x-15">
+                                <input class="form-control" type="text" />
+                                <input class="form-control" type="text"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column mt-3">
+                            <mat-checkbox>Disabled</mat-checkbox>
+                            <mat-checkbox>Chauffeur</mat-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-10 col-md-10 col-sm-12 col-12">
+                  <div class="d-flex justify-content-center" style="column-gap: 20px;">
+                    <button class="btn btn-primary btn-default">Submit</button>
+                    <button class="btn btn-outline-dark">Cancel</button>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <app-rates-seasons-list></app-rates-seasons-list>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <app-rates-values-list></app-rates-values-list>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-primary btn-default" type="button" (click)="onExtrasDefinitions()">Definitions</button>
+                        <div class="d-flex gap-x-15">
+                            <button class="btn btn-primary btn-default" type="button">Back</button>
+                            <button class="btn btn-primary btn-default" type="button">Edit</button>
+                            <button class="btn btn-primary btn-default" type="button">Delete</button>
+                            <button class="btn btn-outline-dark" type="button">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-tab>
+    <!-- <mat-tab label="Extra Search">
+        <div class="row mt-3 d-flex justify-content-between">
+            <div class="form-group col-3">
+                <input type="text" class="form-control" maxlength="200"/>
+            </div>
+            <div class="form-group col-2">
+                <button class="btn btn-outline-dark w-100">Filter</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <app-rates-extras-search-list [list]="extraSearchList"></app-rates-extras-search-list>
+            </div>
+        </div>
+    </mat-tab> -->
+</mat-tab-group>

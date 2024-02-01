@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb" *ngIf="menuItems.length > 0">
+        <ng-container *ngFor="let item of menuItems">
+            <li class="breadcrumb-item"  *ngIf="!item.disableBreadcrumb">
+                <a [routerLink]="item.link">{{item.title}}</a>
+            </li>
+        </ng-container>
+       
+      <!-- <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li> -->
+    </ol>
+</nav>

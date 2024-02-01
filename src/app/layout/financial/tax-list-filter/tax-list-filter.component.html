@@ -1,0 +1,17 @@
+<form [formGroup]="formGroup" (ngSubmit)="save()">
+  <div class="row" style="justify-content:end;margin-top:15px">
+    <div class="form-group col-3">
+      <input type="text"
+             class="form-control"
+             placeholder="Currency"
+             maxlength="200"
+             formControlName="searchNumber" />
+    </div>
+    <div class="form-group col-2">
+    </div>
+    <div class="form-group col-5"></div>
+    <div class="form-group col-2">
+      <button class="btn btn-outline-dark w-100">Filter</button>
+    </div>
+  </div>
+</form>

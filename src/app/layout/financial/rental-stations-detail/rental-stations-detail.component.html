@@ -1,0 +1,133 @@
+
+<form class="needs-validation pt-3" novalidate [formGroup]="formGroup" (ngSubmit)="save()">
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-6 col-12">
+            <div class="d-flex flex-column">
+                <div class="form-group">
+                    <label>Code</label>
+                    <input class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Address 2</label>
+                    <input class="form-control" />
+                </div>
+                <div class="d-flex gap-x-20">
+                    <div class="form-group w-50">
+                        <label>Country</label>
+                        <input class="form-control" />
+                    </div>
+                    <div class="form-group w-50">
+                        <label></label>
+                        <input class="form-control mt-2" />
+                    </div>
+                </div>
+                <div class="d-flex gap-x-20">
+                    <div class="form-group w-50">
+                        <label>Zip Code</label>
+                        <input class="form-control" />
+                    </div>
+                    <div class="form-group w-50">
+                        <label></label>
+                        <input class="form-control mt-2" />
+                    </div>
+                </div>
+                <div class="d-flex gap-x-20">
+                    <div class="form-group w-50">
+                        <label>Telephone 1</label>
+                        <input class="form-control" />
+                    </div>
+                    <div class="form-group w-50">
+                        <label>Telephone 2</label>
+                        <input class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-6 col-12">
+            <div class="d-flex flex-column">
+                <div class="d-flex gap-x-20">
+                    <div class="form-group w-50">
+                        <label>Zone</label>
+                        <select class="form-control">
+                            <option>Turkey</option>
+                        </select>
+                    </div>
+                    <div class="form-group w-50">
+                        <label>Type</label>
+                        <select class="form-control">
+                            <option>Airport Terminal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex gap-x-20">
+                    <div class="form-group w-50">
+                        <label>Mobile</label>
+                        <input class="form-control" />
+                    </div>
+                    <div class="form-group w-50">
+                        <label>Fax</label>
+                        <input class="form-control" />
+                    </div>
+                </div>
+                <div class="d-flex gap-x-20">
+                    <div class="form-group w-50">
+                        <label>Email</label>
+                        <input class="form-control" />
+                    </div>
+                    <div class="d-flex flex-column form-group w-50 justify-content-end">
+                        <mat-checkbox>Enable After hours</mat-checkbox>
+                        <mat-checkbox>Specific Timezone</mat-checkbox>
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <label class="mb-3">Manager Information</label>
+                    <div class="d-flex gap-x-20">
+                        <div class="form-group w-50">
+                            <label>Name/Surname</label>
+                            <input class="form-control" />
+                        </div>
+                        <div class="form-group w-50">
+                            <label>Telephone</label>
+                            <input class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <label class="mb-3">Coordinates</label>
+                    <div class="d-flex gap-x-20">
+                        <div class="form-group w-50">
+                            <label>Latitude</label>
+                            <input class="form-control" />
+                        </div>
+                        <div class="form-group w-50">
+                            <label>Longtitude</label>
+                            <input class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-6 col-12">
+            <div class="form-group">
+                <label>Details</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-6 col-12 d-flex flex-column justify-content-end">
+            <div class="d-flex justify-content-center" style="column-gap: 40px; margin-bottom: 20px;">
+                <button class="btn btn-primary btn-default" style="height: fit-content;">Submit</button>
+                <button class="btn btn-outline-dark" style="height: fit-content;">Cancel</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,95 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}"
+     *ngIf="!(wideResolution && isHome) && !ispaymentoverview && !issettings && !isPromo">
+  <div class="list-group sidebar-fields">
+
+    <ng-container *ngIf="wideResolution; else smallTemplate">
+      <ng-container *ngFor="let item of availableItems">
+        <a *ngIf="item && item.route"
+           [routerLinkActive]="['router-link-active']"
+           (click)="onMenuClick(item)"
+           [routerLinkActiveOptions]="item.activeOptions"
+           [routerLink]="[item.route]"
+           [attr.aria-label]="item.title"
+           class="list-group-item">
+          <i class="{{item.icon}}"></i>&nbsp;
+          <span>{{item.title}}</span>
+          <span *ngIf="item.count">&nbsp;({{item.count}})</span>
+        </a>
+        <a *ngIf="item && !item.route"
+           [routerLinkActive]="['router-link-active']"
+           (click)="onMenuClick(item)"
+           [routerLinkActiveOptions]="item.activeOptions"
+           [attr.aria-label]="item.title"
+           class="list-group-item">
+          <i class="{{item.icon}}"></i>&nbsp;
+          <span>{{item.title}}</span>
+          <span *ngIf="item.count">&nbsp;({{item.count}})</span>
+        </a>
+      </ng-container>
+    </ng-container>
+    <ng-template #smallTemplate>
+      <!--      Sidebar for all pages  -->
+      <ng-container *ngIf="!franchiseDetail && !brokersDetail && !subFranchiseeDetail">
+        <ng-container *ngFor="let topMenu of availableTopItems">
+          <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass(topMenu.route)">
+              <i class="fas fa-tasks"></i>&nbsp;
+              <span>{{topMenu.title}}</span>
+            </a>
+            <ul style="margin: 0px; padding-inline-start: 0px; padding-left: 0px;">
+              <li class="nested" [class.expand]="showMenu === topMenu.route">
+                <ul class="submenu">
+                  <li *ngFor="let subMenu of topMenu.childItems">
+                    <a routerLink="{{subMenu.route}}"
+                       [routerLinkActive]="['router-link-active']" class="list-group-item">
+                      <i class="{{subMenu.icon}}"></i>&nbsp;
+                      <span>{{subMenu.title}}</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </ng-container>
+      </ng-container>
+<!--      Sidebar for franchisee, broker & subfranchisee pages-->
+      <ng-container *ngIf="franchiseDetail || brokersDetail || subFranchiseeDetail">
+        <ng-container *ngFor="let item of availableItems">
+          <a *ngIf="item.roles.includes(loggedUserRole)"
+             [routerLinkActive]="['router-link-active']"
+             [routerLinkActiveOptions]="item.activeOptions"
+             [routerLink]="[item.route]"
+             [attr.aria-label]="item.title"
+             class="list-group-item">
+            <i class="{{item.icon}}"></i>&nbsp;
+            <span>{{item.title}}</span>
+            <span *ngIf="item.count">&nbsp;({{item.count}})</span>
+          </a>
+        </ng-container>
+      </ng-container>
+    </ng-template>
+  </div>
+  <span class="footer-text">
+    Technical support
+  </span>
+  <div class="question_mark" *ngIf="collapsed">
+    ?
+  </div>
+  <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+    <i class="fas fa-long-arrow-alt-{{collapsed?'right':'left'}}"></i>
+  </div>
+  <span class="link_text1">
+    <small>Powered by</small>
+  </span>
+  <div class="image_stantum" *ngIf="!collapsed">
+    <img src="../../assets/images/stantum_logo.png" width="20" height="20"/>
+  </div>
+  <div class="image_stantum_left" *ngIf="collapsed">
+    <img src="../../assets/images/stantum_logo.png" width="20" height="20"/>
+  </div>
+  <span class="link_text2">
+    <a href="https://stantum.eu/">
+      <small>Stantum s.r.o</small>
+    </a>
+  </span>
+</nav>

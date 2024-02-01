@@ -1,0 +1,90 @@
+<!-- UI for ReservationListComponent
+
+ Initially powered by Stantum Angular Utils.
+ Want to dramatically increase your development speed too? Visit https://www.stantum.cz/development-automation -->
+
+ <h4>Extras List</h4>
+ <div class="list-wrapper">
+   <!-- <div class="list-info">
+     <div *ngIf="pageWrapper && pageWrapper.totalCount > 0">
+       Total items: {{pageWrapper.totalCount}}&nbsp;Current page: {{pageWrapper.currentPage}}
+       <a href="javascript:" (click)="downloadCsv()">Export as CSV</a>
+     </div>
+   </div> -->
+   <nav *ngIf="pager.pages && pager.pages.length && pager.pages.length > 1"
+        aria-label="Franchises page navigation bottom">
+     <ul class="pagination mt-1">
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage - 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-left"></i>
+         </a>
+       </li>
+       <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+         <a class="page-link" [routerLink]="['/reservations','page', page]" [queryParams]="query">{{page}}</a>
+       </li>
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage + 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-right"></i>
+         </a>
+       </li>
+     </ul>
+   </nav>
+ </div>
+ <div class="mb-4 mt-4">
+   <app-rates-extras-list-filter (onFilter)="onFilter()"></app-rates-extras-list-filter>
+ </div>
+ <div class="row list-entry mb-1">
+   <div class="col-lg-12">
+     <div class="table-responsive">
+       <table class="table">
+         <thead class="bg-light h6">
+           <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Description</th>
+            <th class="text-center">Actions</th>
+           </tr>
+         </thead>
+         <tbody *ngFor="let item of rates">
+           <tr>
+              <td>{{item.code}}</td>
+              <td>{{item.description}}</td>
+              <td class="text-center">
+                <a [routerLink]="'/rates/extras/'+item.uid" class="mr-2" title="Edit"><i class="far fa-edit link-add"></i></a>
+                <a class="link-remove" title="Remove" (click)="removeExtra(item.uid, item.entityVersion)"><i class="far fa-trash-alt"></i></a>
+              </td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div>
+ <div class="list-wrapper">
+   <div class="list-info mt-1">
+     <div *ngIf="!pageWrapper || pageWrapper.totalCount < 1" [ngStyle]="{'height': '135px'}">
+       Empty list
+     </div>
+     <div *ngIf="pageWrapper && pageWrapper.totalCount > 0">
+       Total items: {{pageWrapper.totalCount}}&nbsp;Current page: {{pageWrapper.currentPage}}
+       <a href="javascript:" (click)="downloadCsv()">Export as CSV</a>
+     </div>
+   </div>
+   <nav *ngIf="pager.pages && pager.pages.length && pager.pages.length > 1"
+        aria-label="Franchises page navigation bottom">
+     <ul class="pagination mt-1">
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage - 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-left"></i>
+         </a>
+       </li>
+       <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+         <a class="page-link" [routerLink]="['/reservations','page', page]" [queryParams]="query">{{page}}</a>
+       </li>
+       <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+         <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage + 1)]" [queryParams]="query">
+           <i class="fas fa-long-arrow-alt-right"></i>
+         </a>
+       </li>
+     </ul>
+   </nav>
+ </div>
+ 

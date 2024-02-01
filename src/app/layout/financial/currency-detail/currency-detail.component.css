@@ -1,0 +1,13 @@
+::ng-deep .mat-tab-body-content {
+  overflow: visible !important;
+}
+::ng-deep .mat-tab-label {
+  font-weight: bold;
+  color: #0F172A;
+}
+.mat-tab-group {
+  height: calc(100vh - 200px);
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+}

@@ -1,0 +1,7 @@
+<div [@openClose]="isOpen ? 'open' : 'closed'" *ngIf="currentMessage" class="alert alert-warning alert-dismissible fade show" role="alert" (click)="showNotification()">
+  <div class="truncate"><strong>{{currentMessage.title}}</strong>&nbsp; &nbsp;{{currentMessage.brief}}</div>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="mb-0"><small><i>{{currentMessage.publishDate | date:'short'}}, <b>{{currentMessage.author}}</b></i></small></p>
+</div>

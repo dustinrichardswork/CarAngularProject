@@ -1,0 +1,7 @@
+<ul class="navbar-nav">
+  <ng-container *ngFor="let item of availableItems">
+    <li class="nav-item" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="item.activeOptions">
+      <a class="nav-link" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="item.activeOptions" [routerLink]="[item.route]" [attr.aria-label]="item.title">{{item.title}}</a>
+    </li>
+  </ng-container>
+</ul>

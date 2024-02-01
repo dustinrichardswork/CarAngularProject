@@ -1,0 +1,6 @@
+<ng-container *ngIf="!isEditable">
+<div class="d-flex" (dblclick)="isEditable = true">{{value}}</div>
+</ng-container>
+<ng-container *ngIf="isEditable">
+    <input #input class="ag-input-field-input ag-text-field-input" [(ngModel)]="value" (blur)="change()" (keyup.enter)="change()" />
+</ng-container>

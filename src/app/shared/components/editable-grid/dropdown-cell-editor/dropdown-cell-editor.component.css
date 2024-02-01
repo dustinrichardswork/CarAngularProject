@@ -1,0 +1,9 @@
+:host {
+    width: 100%;
+}
+
+select {
+    background-color: transparent !important;
+    border: none;
+    height: 100%;
+}

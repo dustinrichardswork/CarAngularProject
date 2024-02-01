@@ -1,0 +1,14 @@
+<div class="row pl-5 pr-5 pt-2">
+    <div class="d-flex flex-row w-100 row align-items-center mb-2">
+        <label for="minRate" class="col-lg-6 col-md-8 p-0"><span>Min Rate</span></label><input id="minRate" type="text" class="col-lg-6 col-md-4 col-sm-4 form-control" [textMask]="{mask: rateMask}" [value]="rateData?.rateMin"/>
+    </div>
+    <div class="d-flex flex-row w-100 row align-items-center mb-2">
+        <label for="maxRate" class="col-lg-6 col-md-8 p-0 "><span>Max Rate</span></label><input id="maxRate" type="text" class="col-lg-6 col-md-4 col-sm-4 form-control" [textMask]="{mask: rateMask}" [value]="rateData?.rateMax"/>    
+    </div>
+    <div class="d-flex flex-row w-100 row align-items-center mb-2">
+        <label for="minPeriod" class="col-lg-6 col-md-8 p-0 "><span>Min Period</span></label><input id="minPeriod" type="text" class="col-lg-6 col-md-4 col-sm-4 form-control" [textMask]="{mask: periodMask}" [value]="rateData?.periodMin"/>    
+    </div>    
+    <div class="d-flex flex-row w-100 row align-items-center mb-2">
+        <label for="maxDiscount" class="col-lg-6 col-md-8 p-0 "><span>Max Discount</span></label><input id="maxDiscount" type="text" class="col-lg-6 col-md-4 col-sm-4 form-control" [textMask]="{mask: discountMask}" [value]="rateData?.discountMax"/>    
+    </div>
+</div>

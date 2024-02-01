@@ -1,0 +1,80 @@
+<section class="main-container">
+  <aw-wizard>
+    <aw-wizard-step stepTitle="Welcome">
+      <div class="row m-0 text-center">
+        <div class="col col-md-3">&nbsp;</div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex justify-content-center">
+            <h3>Welcome to addCar Franchise Module</h3>
+          </div>
+          <div class="d-flex justify-content-center">
+            <p>Please proceed into the user activation wizard to complate your registration.</p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="form-check">
+              <input [(ngModel)]="checked" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Agree with <a routerLink="/terms-of-service">Terms of Use</a>
+              </label>
+            </div>
+          </div>
+          <br/>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary" type="button" (click)="acceptTermsOfUse()" [disabled]="!checked">Next
+            </button>
+          </div>
+          <!--<div class="d-flex flex-row-reverse">
+            <div class="p-2"></div>
+          </div>-->
+        </div>
+      </div>
+    </aw-wizard-step>
+    <aw-wizard-step stepTitle="Profile">
+      <div class="row justify-content-center m-0">
+        <!--        <div class="col col-md-3">&nbsp;</div>-->
+        <div class="col-12 col-md-8">
+          <div class="d-flex justify-content-center">
+            <h3>Enter your profile data</h3>
+          </div>
+          <div class="justify-content-center">
+            <app-user-profile-edit #profEditComponent [inputModel]="profileModel"></app-user-profile-edit>
+          </div>
+          <br/>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary" type="button" awPreviousStep>Back</button>&nbsp;
+            <button class="btn btn-primary" type="button" [disabled]="!profEditComponent.isValid ? 'disabled': null"
+                    awNextStep>Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </aw-wizard-step>
+    <aw-wizard-step stepTitle="Set password">
+      <div class="row m-0">
+        <div class="col col-md-3">&nbsp;</div>
+        <div class="col-12 col-md-6">
+          <div class="d-flex justify-content-center">
+            <h3>Choose password</h3>
+          </div>
+          <div class="d-flex justify-content-center">
+            <app-user-set-password #setPassComponent></app-user-set-password>
+          </div>
+          <br/>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary" type="button" awPreviousStep>Back</button>&nbsp;
+            <button class="btn btn-primary" type="button" (click)="finish()"
+                    [disabled]="!setPassComponent.isValid() ? 'disabled': null">
+              Finish
+            </button>
+          </div>
+        </div>
+      </div>
+    </aw-wizard-step>
+    <aw-wizard-step stepTitle="Congratulations">
+      <div class="center">
+        <h3>Your account is activated.</h3>
+        <h6>Go to <a routerLink="/">login page </a>to login.</h6>
+      </div>
+    </aw-wizard-step>
+  </aw-wizard>
+</section>

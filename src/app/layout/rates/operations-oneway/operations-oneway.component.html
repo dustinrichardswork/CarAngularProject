@@ -1,0 +1,93 @@
+<h4>Oneway</h4>
+<div class="d-flex flex-column">
+    <div class="d-flex justify-content-center gap-x-20">
+        <div class="form-group filter-input">
+            <label>Station 1</label>
+            <select class="form-control">
+                <option>All</option>
+            </select>
+        </div>
+        <div class="form-group filter-input">
+            <label>Station 2</label>
+            <select class="form-control">
+                <option>All</option>
+            </select>
+        </div>
+    </div>
+    <div class="mt-2 d-flex justify-content-center w-100">
+        <mat-checkbox>Different Oneway according to directions</mat-checkbox>
+    </div>
+    <div class="d-flex flex-column mt-1">
+        <div class="list-wrapper">
+            <div class="list-info">
+                <div *ngIf="pageWrapper && pageWrapper.totalCount > 0">
+                  Total items: {{pageWrapper.totalCount}}&nbsp;Current page: {{pageWrapper.currentPage}}
+                  <a href="javascript:" (click)="downloadCsv()">Export as CSV</a>
+                </div>
+            </div>
+        </div>
+        <div class="row list-entry mb-1">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <app-editable-grid [addEmitter]="newRowEmitter" [newRowPrototype]="newOnewayRowPrototype" [columnDefs]="columnDefs" [rowData]="rowData" [decorator]="onewayDecorator"></app-editable-grid>
+                <!-- <table class="table">
+                  <thead class="bg-light h6">
+                    <tr>
+                      <th scope="col">Station1(A)</th>
+                      <th scope="col">Station2(B)</th>
+                      <th scope="col">Charge</th>
+                      <th scope="col">Extra</th>
+                      <th scope="col">Value (A)->(B) / (B)->(A)</th>
+                      <th class="text-center">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td>Abu Dhabi Airport</td>
+                        <td>Abu Dhabi CIty Office</td>
+                        <td><input type="checkbox"/></td>
+                        <td>One way Fee</td>
+                        <td>78.00</td>
+                        <td class="text-center">
+                            <a class="mr-2" title="Add"><i class="fa fa-plus"></i></a>
+                            <a class="mr-2" title="Edit"><i class="far fa-edit link-add"></i></a>
+                            <a [routerLink]="" class="link-remove" title="Remove"><i class="far fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                  </tbody>
+                </table> -->
+              </div>
+            </div>
+          </div>
+          <div class="list-wrapper">
+            <div class="list-info mt-1">
+              <div *ngIf="!pageWrapper || pageWrapper.totalCount < 1" [ngStyle]="{'height': '135px'}">
+                Empty list
+              </div>
+              <div *ngIf="pageWrapper && pageWrapper.totalCount > 0">
+                Total items: {{pageWrapper.totalCount}}&nbsp;Current page: {{pageWrapper.currentPage}}
+                <a href="javascript:" (click)="downloadCsv()">Export as CSV</a>
+              </div>
+            </div>
+            <nav *ngIf="pager.pages && pager.pages.length && pager.pages.length > 1"
+                 aria-label="Franchises page navigation bottom">
+              <ul class="pagination mt-1">
+                <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                  <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage - 1)]" [queryParams]="query">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                  </a>
+                </li>
+                <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                  <a class="page-link" [routerLink]="['/reservations','page', page]" [queryParams]="query">{{page}}</a>
+                </li>
+                <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                  <a class="page-link" [routerLink]="['/reservations','page', (pager.currentPage + 1)]" [queryParams]="query">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          
+    </div>
+</div>

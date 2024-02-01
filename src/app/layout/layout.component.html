@@ -1,0 +1,11 @@
+<app-header></app-header>
+<app-sidebar (collapsedEvent)="receiveCollapsed($event)"></app-sidebar>
+<section 
+  [style.margin-left]="router.url === '/home' || router.url.indexOf('/promo') > -1 ? '0px' : '235px'"
+  class="main-container" 
+  [ngClass]="{collapsed: collapedSideBar, 'promo-container': router.url.indexOf('/promo') > -1}">
+  <app-notification-bar></app-notification-bar>
+  <app-breadcrumb></app-breadcrumb>
+  <router-outlet></router-outlet>
+</section>
+<!--<app-footer></app-footer>-->

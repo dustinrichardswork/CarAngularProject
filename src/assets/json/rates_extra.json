@@ -1,0 +1,13 @@
+{
+    "totalCount": 8,
+    "currentPage": 1,
+    "pageSize": 10,
+    "items": [
+      {
+        "uid": "123123123",
+        "group": "CDMR",
+        "code": "CDMR",
+        "description": "Navigation"
+      }
+    ]
+  }

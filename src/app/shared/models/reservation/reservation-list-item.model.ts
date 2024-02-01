@@ -1,0 +1,43 @@
+import { BaseEntity } from '../base-entity.model';
+import { ReservationStatus } from '../enums';
+
+export class ReservationListItem extends BaseEntity {
+  public number: string;
+  public status: ReservationStatus;
+  public cancellationDate: Date | null;
+  public otherNumber: string;
+  public voucherNumber: string;
+  public reservationDate: Date;
+  public openingDate: Date;
+  public leadTime: number;
+  public closeDate: Date;
+  public clientId: number;
+  public driver: string;
+  public pickupLocationCode: string;
+  public vehicleGroup: string;
+  public rentalAgreementNumber: string;
+  public revenueRental: number;
+  public total: number;
+  public rentedDays: number;
+  public rateCode: string;
+  public totalSalesValues: number;
+  public rentalDaysValue: number;
+  public extrasTotalValue: number;
+  public extrasToInvoice: number;
+  public extrasToInvoiceCashier: number;
+  public valueOfDaysToInvoice: number;
+  public valuesOfDaysToInvoiceCashier: number;
+  public valueOfKmToInvoice: number;
+  public valuesCreditNote: number;
+  public valuesDebitNote: number;
+  public moneyReceivedDateInvoice: Date | null;
+  public moneyReceivedDateCashier: Date | null;
+  public debit: number;
+  public credit: number;
+  public rentalAgreementUid: string | null;
+  public invoiceDate: Date | null;
+  public franchiseePayDate: Date | null;
+  public currencyName: string;
+  public isPaidToFranchisee: boolean;
+  public origin: string;
+}

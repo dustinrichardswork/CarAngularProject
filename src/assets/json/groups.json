@@ -1,0 +1,15 @@
+{
+  "totalCount": 8,
+  "currentPage": 1,
+  "pageSize": 10,
+  "items": [
+    {
+      "uid": "12345",
+      "group": "XXAR",
+      "description": "Mercedes G-class",
+      "sipp": "XXAR",
+      "minimum_age": 21,
+      "maximum_age": 80 
+    }
+  ]
+}

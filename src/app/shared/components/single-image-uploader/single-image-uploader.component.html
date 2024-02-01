@@ -1,0 +1,16 @@
+<ul #errors></ul>
+<dropzone class="upload-file-container"
+          [ngClass]="{'upload-file-container--highlighted': highlightDropzone}"
+          [config]="dropzoneConfig"
+          [disabled]="fileUploading"
+          (addedFile)="uploadFile($event)"
+          (dragEnter)="highlightDropzone = true"
+          (dragLeave)="highlightDropzone = false"
+          #dropzone>
+</dropzone>
+<div class="files-list" *ngIf="file">
+  <p> {{ file.name }} ({{ calculateSize(file.size) }})</p>
+  <button class="delete-file" (click)="deleteAttachment()">
+    <i class="far fa-trash-alt"></i>
+  </button>
+</div>

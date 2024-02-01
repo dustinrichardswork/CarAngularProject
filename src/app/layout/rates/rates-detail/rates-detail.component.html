@@ -1,0 +1,151 @@
+<mat-tab-group [color]="'primary'">
+  <mat-tab label="Rate Details">
+    <form *ngIf="currentModel"
+        class="needs-validation pt-3"
+        novalidate
+        [formGroup]="formGroup"
+        (ngSubmit)="save()">
+      <div class="row">
+        <div class="form-group col-lg-5 col-md-5 col-sm-6 col-12">
+          <div class="d-flex flex-column">
+            <div>
+              <label for="name" class="required">Code</label>
+              <input class="form-control" type="text" formControlName="code" id="code" placeholder="Enter Code here"
+                [ngClass]="{ 'is-invalid': submitted && fields.code.errors, 'is-valid': submitted && !fields.code.errors }"/>
+                <div *ngIf="submitted && fields.code.errors"
+                    class="invalid-feedback">
+                  <div *ngIf="fields.code.errors.required">code is required.</div>
+                </div>
+            </div>
+            <div class="mt-3">
+              <label for="name" class="required">Description</label>
+              <input class="form-control" type="text" formControlName="description" id="description" placeholder="Write Description here"
+                [ngClass]="{ 'is-invalid': submitted && fields.description.errors, 'is-valid': submitted && !fields.description.errors }"/>
+                <div *ngIf="submitted && fields.description.errors"
+                    class="invalid-feedback">
+                  <div *ngIf="fields.description.errors.required">Description is required.</div>
+                </div>
+            </div>
+            <div class="mt-3">
+              <label for="name" class="required">Observation</label>
+              <textarea class="form-control" type="text" formControlName="observation" id="observation" placeholder="Write Description here" rows="5"
+                [ngClass]="{ 'is-invalid': submitted && fields.description.errors, 'is-valid': submitted && !fields.description.errors }"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-lg-5 col-md-5 col-sm-6 col-12">
+          <div class="d-flex flex-column">
+            <app-rates-rental-stations [list]="rentalStationsList"></app-rates-rental-stations>
+            <div class="mt-3">
+              <label for="name" class="required">Reference Currency</label>
+              <select class="form-control">
+                <option>Euro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="form-group col-lg-4 col-md-4 col-sm-6 col-12">
+          <label for="name"
+                class="required">Tax Rate</label>
+          <input class="form-control"
+                type="text"
+                formControlName="tax_rate"
+                id="tax_rate"
+                placeholder="Enter Exchange Rate here"
+                [ngClass]="{ 'is-invalid': submitted && fields.tax_rate.errors, 'is-valid': submitted && !fields.tax_rate.errors }"/>
+          <div *ngIf="submitted && fields.tax_rate.errors"
+              class="invalid-feedback">
+            <div *ngIf="fields.tax_rate.errors.required">Tax Rate is required.</div>
+          </div>
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-10 col-md-10 col-sm-12 col-12">
+          <div class="d-flex justify-content-center" style="column-gap: 20px;">
+            <button class="btn btn-primary btn-default">Submit</button>
+            <button class="btn btn-outline-dark">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-tab>
+  <mat-tab label="Options">
+    <div class="d-flex flex-column mt-3">
+      <div class="d-flex w-100">
+        <div class="d-flex flex-column w-50">
+          <mat-checkbox>Don't allow Invoice Cashier for days /hours/kms</mat-checkbox>
+          <mat-checkbox>Don't allow Invoice Cashier for extra days</mat-checkbox>
+          <mat-checkbox>Force minimum deposit value</mat-checkbox>
+          <mat-checkbox>Keep reservation values on RA</mat-checkbox>
+          <mat-checkbox>Keep reservation values on RA if rate is kept</mat-checkbox>
+          <mat-checkbox>Don't charge Sundays and Holidays days</mat-checkbox>
+          <mat-checkbox>Allow preservation value on reservation if rate is kept </mat-checkbox>
+        </div>
+        <div class="d-flex flex-column w-50">
+          <div class="d-flex w-100">
+            <div class="d-flex flex-column w-50">
+              <mat-checkbox>Public rate</mat-checkbox>
+              <mat-checkbox>Free value rate</mat-checkbox>
+              <mat-checkbox>Confidential rate</mat-checkbox>
+              <mat-checkbox>Tax Included</mat-checkbox>
+              <mat-checkbox>Extra days rate only for extra days</mat-checkbox>
+            </div>
+            <div class="d-flex flex-column w-50">
+              <mat-checkbox>Hourly rate</mat-checkbox>
+              <mat-checkbox>Transfer rate</mat-checkbox>
+              <mat-checkbox>Real days</mat-checkbox>
+            </div>
+          </div>
+          <div class="d-flex flex-column mt-3">
+            <div class="form-group w-80">
+              <label for="name" class="required">Extra days rate and invoice cashier:</label>
+              <input class="form-control" type="text" id="code" placeholder="Enter Code here"/>
+            </div>
+            <div class="d-flex">
+              <mat-checkbox>Upselling by Matrix</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex w-100">
+        <div class="d-flex w-50">
+          <div class="form-group w-80">
+            <label for="name" class="required">Tax Code</label>
+            <select class=form-control>
+              <option>VAT 40%</option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex w-50">
+          <div class="form-group w-80">
+            <label for="name" class="required">Upselling rate</label>
+            <input class="form-control" type="text" id="upselling_rate" placeholder="Placeholder"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="d-flex justify-content-center" style="column-gap: 20px;">
+          <button class="btn btn-primary btn-default">Submit</button>
+          <button class="btn btn-outline-dark">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Client Associated">
+    <app-rates-client-associated></app-rates-client-associated>
+  </mat-tab>
+</mat-tab-group>
+<div class="row">
+  <div class="form-group col-lg-8 col-md-8 col-sm-12 col-12">
+    <div class="d-flex" style="column-gap: 30px;">
+      <button class="btn btn-primary btn-default" (click)="onRatesExcess()">Excess</button>
+      <button class="btn btn-primary btn-default" (click)="onRatesExtras()">Extras</button>
+      <button class="btn btn-primary btn-default">Add new group</button>
+    </div>
+  </div>
+  <div class="form-group col-sm-12 col-12">
+    <app-rates-reservations-list [list]="reservationsList"></app-rates-reservations-list>
+  </div>
+</div>

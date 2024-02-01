@@ -1,0 +1,27 @@
+﻿.spinner {
+  background-color: rgba(255, 255, 255, .5);
+  bottom: 0;
+  cursor: default;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+
+  &__message {
+    color: #e30613;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 6px 25px;
+  }
+  &--center {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  ::ng-deep circle {
+      stroke: #e30613;
+  }
+}
